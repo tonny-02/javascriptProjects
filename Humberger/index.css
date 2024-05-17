@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:aqua;
+    width: 100%;
+    height: 100vh;
+
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+.logo{
+    color: blue;
+    margin-left: 30px;
+    padding: 20px;
+    font-weight: 25px;
+
+}
+.nav{
+    margin-right: 30px;
+}
+.nav-ul{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.nav-ul{
+    list-style: none;
+}
+.nav-ul a{
+    text-decoration: none;
+    font-weight: 25px;
+    color: blue;
+}
+.nav-ul a:hover{
+    text-decoration: underline;
+}
+
+.hum{
+    display:none ;
+    margin-right: 30px;
+    cursor: pointer;
+   
+    
+}
+.tic{
+    width: 25px;
+    height: 3px;
+    background-color: blue;
+    margin: 5px auto;
+    transition: 0.5s ease-in-out;
+
+
+}
+@media (max-width: 768px) {
+    .hum{
+        display: block;
+    }
+    .nav-ul{
+        flex-direction: column;
+        background-color: white;
+        justify-content: start;
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        padding: 30px;
+        transition: 5s;
+    }
+
+    .hum.active .tic:nth-child(2){
+        opacity: 0;
+    }
+    .hum.active .tic:nth-child(1){
+        transform: translateY(8px) rotate(45deg) ;
+    }
+    .hum.active .tic:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg) ;
+    }
+   .nav-ul.active{
+    left: 0;
+
+ }
+    
+}
